@@ -29,7 +29,7 @@ module "service_sg" {
   source  = "app.terraform.io/tech-session-demo/security-group/aws"
   version = "4.17.2"
 
-  name        = "sg-${var.environment}"
+  name        = "${var.environment}-sg"
   description = "Security group for user-service with custom ports open within VPC."
 
   ingress_cidr_blocks      = ["10.10.0.0/16"]
