@@ -26,7 +26,7 @@ resource "aws_instance" "tf-cloud-instance" {
 
 
 module "service_sg" {
-  source  = "app.terraform.io/tech-session/security-group/aws"
+  source  = "app.terraform.io/tech-session-demo/security-group/aws"
   version = "4.17.2"
 
   name        = "sg-${var.environment}"
@@ -50,7 +50,7 @@ module "service_sg" {
 }
 
 module "s3-bucket" {
-  source  = "app.terraform.io/tech-session/s3-bucket/aws"
+  source  = "app.terraform.io/tech-session-demo/s3-bucket/aws"
   version = "3.14.1"
   bucket = "s3-bucket-aws-${var.environment}"
 }
